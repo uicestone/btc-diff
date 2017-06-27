@@ -1,0 +1,24 @@
+{
+  "name": "btc-diff",
+  "version": "1.0.0",
+  "description": "海内外比特币差价监测",
+  "main": "app.js",
+  "dependencies": {
+    "mongoose": "^4.11.0",
+    "node-env-file": "^0.1.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uicestone/btc-diff.git"
+  },
+  "author": "Uice Lu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uicestone/btc-diff/issues"
+  },
+  "homepage": "https://github.com/uicestone/btc-diff#readme"
+}
