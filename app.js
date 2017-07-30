@@ -11,7 +11,7 @@ const Quote = require('./quote.js');
 let foreign, domestic;
 
 function refresh () {
-	https.get('https://btc-e.com/api/3/ticker/btc_usd', res => {
+	https.get('https://api.coinbase.com/v2/prices/btc-usd/spot', res => {
 		let string = '';
 
 		res.on('data', chunk => {
@@ -20,14 +20,15 @@ function refresh () {
 
 		res.on('end', () => {
 			const data = JSON.parse(string);
+			console.log(data);
 			const quote = new Quote({
 				time: new Date,
-				code: 'btc-btce',
+				code: 'btc-coinbase',
 				currency: 'usd',
-				price: data.btc_usd.last
+				price: Number(data.data.amount)
 			});
 			quote.save();
-			foreign = data.btc_usd.last;
+			foreign = data.data.amount;
 			showDiff();
 		});
 	});
