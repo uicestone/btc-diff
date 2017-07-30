@@ -20,7 +20,7 @@ function refresh () {
 
 		res.on('end', () => {
 			const data = JSON.parse(string);
-			console.log(data);
+
 			const quote = new Quote({
 				time: new Date,
 				code: 'btc-coinbase',
